@@ -1,0 +1,2 @@
+g++ -std=c++14  auto.cpp -o auto 
+#g++ -std=c++11  auto.cpp -o auto 
