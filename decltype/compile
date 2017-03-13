@@ -1,0 +1,2 @@
+g++ -std=c++14 decltype.cpp -o decltype 
+#g++ -std=c++11  auto.cpp -o auto 
