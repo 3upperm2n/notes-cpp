@@ -1,0 +1,2 @@
+g++ -std=c++14  iter.cpp -o iter 
+#g++ -std=c++11  auto.cpp -o auto 
