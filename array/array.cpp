@@ -54,6 +54,57 @@ int main()
 		cout << i << " ";	
 	} cout << endl;
 
+	//-----------------------------//
+	// multi dim array
+	//-----------------------------//
+	cout<<endl;
+	cout<<endl;
+	cout<<endl;
+	cout<<endl;
+	constexpr size_t rowCount = 3;
+	constexpr size_t colCount = 4;
+	int array2d[rowCount][colCount];
+
+	// init using for-auto
+	auto count = 0;
+	for(auto &row : array2d) {
+		for(auto &col : row) {
+			col = count; 	
+			count++;
+		}
+	}
+	// print : using auto
+	for(auto &row : array2d) {
+		for(auto col : row) {
+			cout << col << " ";
+		}
+		cout << endl;
+	}
+	cout << endl;
+
+	// print : using auto
+	cout<<endl;
+	cout<<endl;
+	cout<<endl;
+	for(auto r = array2d; r < array2d + rowCount; r++) {
+		for(auto c = *r; c < *r + colCount; c++) {
+			cout << *c << " ";
+		}
+		cout << endl;
+	}	cout << endl;
+
+
+	// print : using begin/end
+	cout<<endl;
+	cout<<endl;
+	cout<<endl;
+	for(auto r = begin(array2d); r != end(array2d); r++) {
+		for(auto c = begin(*r); c != end(*r); c++) {
+			cout << *c << " ";
+		}
+		cout << endl;
+	}	cout << endl;
+
 
 	return 0;
 }
