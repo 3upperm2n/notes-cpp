@@ -1,0 +1,2 @@
+g++ -std=c++14  init_lists.cpp -o init_lists
+#g++ -std=c++11  auto.cpp -o auto 
