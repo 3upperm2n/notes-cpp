@@ -15,12 +15,12 @@ void display(T &vec)
 
 int main()
 {
-	vector<int> v1(10, 1);
+	vector<int> v1(10, 1); // ten 1s
 	cout << v1.size() << endl;
 	display<vector<int>>(v1);
 
 
-	vector<string> v2{10, "h"};
+	vector<string> v2{10, "h"}; // ten hs
 	//vector<string> v2(10, "h");
 	cout << v2.size() << endl;
 	display<vector<string>>(v2);
@@ -32,16 +32,16 @@ int main()
 	//vector<string> svec(10, "null"); // correct
 	//display<vector<string>>(svec);
 
-	vector<int> v3(10, 42);
+	vector<int> v3(10, 42); // ten 42s
 	display<vector<int>>(v3);
 
-	vector<int> v4{10, 42};
+	vector<int> v4{10, 42}; // ten 42s
 	display<vector<int>>(v3);
 
-	vector<int> v5{10};
+	vector<int> v5{10}; // one 10
 	cout << v5.size() << endl;
 
-	vector<int> v6(10);
+	vector<int> v6(10); // 10 zeros
 	cout << v6.size() << endl;
 
 	return 0;
