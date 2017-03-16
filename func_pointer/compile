@@ -1,0 +1,2 @@
+g++ -std=c++14  func_ptr.cpp -o func_ptr 
+#g++ -std=c++11  auto.cpp -o auto 
