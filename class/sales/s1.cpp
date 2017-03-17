@@ -41,7 +41,7 @@ Sales_data &combine(const Sales_data& myData) {
 }
 
 //-------------------------//
-// other func
+// read func
 //-------------------------//
 istream &read(istream &is, Sales_data &item) {
 	double price = 0;
@@ -49,6 +49,18 @@ istream &read(istream &is, Sales_data &item) {
 	item.revenue = item.units_sold * price;
 	return is;
 }
+
+//-------------------------//
+// print func
+//-------------------------//
+ostream &print(ostream &os, const Sales_data &item)
+{
+	os << item.isbn() << " " << item.units_sold << " " << item.revenue << " "
+		<< item.avg_price(); 
+
+	return os;
+}
+
 
 int main()
 {
