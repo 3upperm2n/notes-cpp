@@ -45,7 +45,7 @@ Sales_data& Sales_data::combine(const Sales_data& myData) {
 //-------------------------//
 istream &read(istream &is, Sales_data &item) {
 	double price = 0;
-	is >> item.bookNo << item.units_sold >> price;
+	is >> item.bookNo >> item.units_sold >> price;
 	item.revenue = item.units_sold * price;
 	return is;
 }
