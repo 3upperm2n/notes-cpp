@@ -5,16 +5,25 @@
 
 using namespace std;
 
-struct Sales_data {
+struct Sales_data 
+{
+	// constructer
+	Sales_data() = default; // inline
+	Sales_data(const string&s) : bookNo(s) {}
+	Sales_data(const string&s, unsigned n, double p) : 
+		bookNo(s), units_sold(n), revenue(p * n) {}
+	Sales_data(istream&);
+
+	// func
 	string isbn() { return bookNo; }
 	double avg_price() const; 
 	Sales_data &combine(const Sales_data&);
 
-	//-----------------
+	// variable
 	string bookNo;
 	unsigned units_sold = 0;
 	double revenue = 0.0;
-};
+}
 
 
 Sales_data add(const Sales_data&, const Sales_data&);
