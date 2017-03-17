@@ -6,7 +6,7 @@
 using namespace std;
 
 struct Sales_data {
-	string isbn() { return bookNo; }
+	string isbn() const { return bookNo; }
 	double avg_price() const; 
 	Sales_data &combine(const Sales_data&);
 
@@ -53,7 +53,7 @@ istream &read(istream &is, Sales_data &item) {
 //-------------------------//
 // print func
 //-------------------------//
-ostream &print(ostream &os, const Sales_data &item)
+ostream &print(ostream &os, const Sales_data& item)
 {
 	os << item.isbn() << " " << item.units_sold << " " << item.revenue << " "
 		<< item.avg_price(); 
