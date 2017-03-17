@@ -26,13 +26,8 @@ public:
 	Sales_data &combine(const Sales_data&);
 
 private:
-	double Sales_data::avg_price () const
-	{
-		if(units_sold) {
-			return revenue / units_sold;	
-		} else {
-			return 0;	
-		}
+	double avg_price () const {
+		return units_sold ? revenue / units_sold : 0;
 	}
 
 	string bookNo;
