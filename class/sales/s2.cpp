@@ -7,6 +7,10 @@ using namespace std;
 
 class Sales_data 
 {
+friend Sales_data add(const Sales_data&, const Sales_data&);
+friend ostream &print(ostream&, const Sales_data&);
+friend istream &read(istream&, Sales_data&);
+
 public:
 	// constructer
 	Sales_data() = default; // inline
@@ -36,10 +40,6 @@ private:
 	double revenue = 0.0;
 }
 
-
-Sales_data add(const Sales_data&, const Sales_data&);
-ostream &print(ostream&, const Sales_data&);
-istream &read(istream&, Sales_data&);
 
 //-------------------------//
 // class member func
