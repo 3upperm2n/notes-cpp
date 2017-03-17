@@ -1,1 +1,2 @@
 g++ -std=c++14  sales.cpp -o sales 
+g++ -std=c++14  s1.cpp -o s1
