@@ -5,21 +5,32 @@
 
 using namespace std;
 
-struct Sales_data 
+class Sales_data 
 {
+public:
 	// constructer
 	Sales_data() = default; // inline
 	Sales_data(const string&s) : bookNo(s) {}
 	Sales_data(const string&s, unsigned n, double p) : 
 		bookNo(s), units_sold(n), revenue(p * n) {}
-	Sales_data(istream&);
+	Sales_data(istream &is) {
+		read(is, *this);	
+	}
 
 	// func
 	string isbn() { return bookNo; }
-	double avg_price() const; 
 	Sales_data &combine(const Sales_data&);
 
-	// variable
+private:
+	double Sales_data::avg_price () const
+	{
+		if(units_sold) {
+			return revenue / units_sold;	
+		} else {
+			return 0;	
+		}
+	}
+
 	string bookNo;
 	unsigned units_sold = 0;
 	double revenue = 0.0;
@@ -33,14 +44,6 @@ istream &read(istream&, Sales_data&);
 //-------------------------//
 // class member func
 //-------------------------//
-double Sales_data::avg_price () const
-{
-	if(units_sold) {
-		return revenue / units_sold;	
-	} else {
-		return 0;	
-	}
-}
 
 
 Sales_data &combine(const Sales_data& myData) {
