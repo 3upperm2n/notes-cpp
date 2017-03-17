@@ -21,7 +21,9 @@ Sales_data add(const Sales_data&, const Sales_data&);
 ostream &print(ostream&, const Sales_data&);
 istream &read(istream&, Sales_data&);
 
-
+//-------------------------//
+// class member func
+//-------------------------//
 double Sales_data::avg_price () const
 {
 	if(units_sold) {
@@ -38,6 +40,15 @@ Sales_data &combine(const Sales_data& myData) {
 	return *this; 	// return the object
 }
 
+//-------------------------//
+// other func
+//-------------------------//
+istream &read(istream &is, Sales_data &item) {
+	double price = 0;
+	is >> item.bookNo << item.units_sold >> price;
+	item.revenue = item.units_sold * price;
+	return is;
+}
 
 int main()
 {
