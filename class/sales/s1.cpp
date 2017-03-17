@@ -32,6 +32,12 @@ double Sales_data::avg_price () const
 }
 
 
+Sales_data &combine(const Sales_data& myData) {
+	units_sold += myData.units_sold;
+	revenue += myData.revenue;
+	return *this; 	// return the object
+}
+
 
 int main()
 {
