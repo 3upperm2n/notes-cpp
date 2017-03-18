@@ -22,7 +22,7 @@ public:
 	}
 
 	// func
-	string isbn() { return bookNo; }
+	string isbn() const { return bookNo; }
 	Sales_data &combine(const Sales_data&);
 
 private:
@@ -33,7 +33,7 @@ private:
 	string bookNo;
 	unsigned units_sold = 0;
 	double revenue = 0.0;
-}
+};
 
 //-------------------------//
 // add func
@@ -52,7 +52,7 @@ Sales_data add(const Sales_data& lhs, const Sales_data& rhs)
 // class member func
 //-------------------------//
 
-Sales_data &combine(const Sales_data& myData) {
+Sales_data& Sales_data::combine(const Sales_data& myData) {
 	units_sold += myData.units_sold;
 	revenue += myData.revenue;
 	return *this; 	// return the object
